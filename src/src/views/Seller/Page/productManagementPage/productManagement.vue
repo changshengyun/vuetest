@@ -500,4 +500,5 @@ const handleDelete = async (row) => {
     border-color: #f56c6c !important;
   }
 }
+
 </style>
