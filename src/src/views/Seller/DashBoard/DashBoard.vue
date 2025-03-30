@@ -4,7 +4,7 @@ import { DocumentChecked, Money, User, Box, Top, Bottom } from '@element-plus/ic
 
 const stats = ref([
   {
-    title: '今日销售额',
+    title: 'Today Sales',
     value: 24580,
     icon: Money,
     trend: 'up',
@@ -12,15 +12,15 @@ const stats = ref([
     format: v => `¥${v.toLocaleString()}`
   },
   {
-    title: '订单数量',
+    title: 'Orders',
     value: 189,
     icon: DocumentChecked,
     trend: 'down',
     color: '#409eff',
-    format: v => `${v} 单`
+    format: v => `${v} `
   },
   {
-    title: '用户增长',
+    title: 'User Growth',
     value: '+12.5%',
     icon: User,
     trend: 'up',
@@ -28,12 +28,12 @@ const stats = ref([
     format: v => v
   },
   {
-    title: '商品总数',
+    title: 'Total Products',
     value: 1568,
     icon: Box,
     trend: 'steady',
     color: '#f56c6c',
-    format: v => `${v.toLocaleString()} 件`
+    format: v => `${v.toLocaleString()} `
   }
 ])
 </script>
@@ -41,7 +41,8 @@ const stats = ref([
 <template>
   <el-main>
     <el-row :gutter="20" class="dashboard-cards">
-      <el-col v-for="(item, index) in stats" :key="index" :xs="24" :sm="12" :md="6">
+      <el-col v-for="(item, index) in stats" :key="index" :xs="24" :sm="12" :md="12">
+        <div class="col-container">
         <el-card class="stat-card">
           <div class="card-content">
             <div class="icon-wrapper" :style="{ backgroundColor: item.color }">
@@ -62,6 +63,7 @@ const stats = ref([
             </div>
           </div>
         </el-card>
+      </div>
       </el-col>
     </el-row>
   </el-main>
@@ -123,5 +125,17 @@ h3 {
 
 .trend.down {
   color: #f56c6c;
+}
+.dashboard-cards {
+  min-height: 500px; /* 根据实际内容调整 */
+}
+
+.col-container {
+  height: 100%;
+}
+
+.stat-card {
+  height: 100%; /* 关键：使卡片撑满容器高度 */
+  /* 原有样式保留 */
 }
 </style>
