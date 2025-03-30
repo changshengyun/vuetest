@@ -2,20 +2,15 @@
   <el-container class="main-container">
     <!-- 头部导航 -->
     <el-header class="header">
-      <div class="logo">Marvo Market</div>
+      <img src="@/assets/images/newlogo.jpg" alt="logo" class="logo">
       <div class="nav-items">
-        <div 
-          v-for="(item, index) in navItems" 
-          :key="index"
-          :class="['nav-item', { active: activeIndex === item.path }]"
-          @click="handleNavSelect(item.path)"
-        >
+        <div v-for="(item, index) in navItems" :key="index" :class="['nav-item', { active: activeIndex === item.path }]"
+          @click="handleNavSelect(item.path)">
           {{ item.title }}
         </div>
       </div>
       <div class="user-info">
-        <el-avatar :size="32" icon="el-icon-user-solid"></el-avatar>
-        <span class="username">用户名</span>
+        <span class="username">username</span>
       </div>
     </el-header>
 
@@ -28,32 +23,32 @@
     <el-footer class="unified-footer">
       <div class="footer-columns">
         <div class="footer-col">
-          <h4>客户服务</h4>
-          <p>在线客服</p>
-          <p>问题反馈</p>
+          <h4>Customer Service</h4>
+          <h4>Online Support</h4>
+          <h4>Feedback</h4>
         </div>
         <div class="footer-col">
-          <h4>关注我们</h4>
-          <p>公众号</p>
-          <p>微博</p>
+          <h4>Follow Us</h4>
+          <h4>Official Account</h4>
+          <h4>Weibo</h4>
         </div>
         <div class="footer-col">
-          <h4>下载APP</h4>
-          <p>扫描二维码</p>
-          <p>立马下载APP</p>
-          <p>下载页面</p>
+          <h4>Download App</h4>
+          <h4>Scan QR Code</h4>
+          <h4>Download Now</h4>
+          <h4>Download Page</h4>
         </div>
         <div class="footer-col">
-          <h4>服务热线</h4>
-          <p>400-0000-000</p>
-          <p>周一至周日 8:00-18:00</p>
+          <h4>Service Hotline</h4>
+          <h4>400-0000-000</h4>
+          <h4>Mon-Sun 8:00-18:00</h4>
         </div>
       </div>
       <div class="divider"></div>
       <div class="footer-features">
-        <span>价格亲民</span>
-        <span>物流快捷</span>
-        <span>品质新鲜</span>
+        <span>Affordable Prices</span>
+        <span>Fast Delivery</span>
+        <span>Fresh Quality</span>
       </div>
       <div class="footer-links">
         <a v-for="(link, index) in footerLinks" :key="index">{{ link }}</a>
@@ -68,18 +63,18 @@ export default {
     return {
       activeIndex: '/',
       navItems: [
-        { title: '我的店铺', path: '/seller/dashboard' },
-        { title: '商品管理', path: '/seller/productManagement' },
-        { title: '订单管理', path: '/seller/orderManagement' },
-        // { title: '我的店铺', path: '/seller/store' }
+        { title: 'My Store', path: '/seller/dashboard' },
+        { title: 'Products Management', path: '/seller/productManagement' },
+        { title: 'Orders Management', path: '/seller/orderManagement' },
+
       ],
       footerLinks: [
-        '关于我们',
-        '帮助中心',
-        '售后服务',
-        '商务合作',
-        '搜索推荐',
-        '友情链接'
+        'About Us',
+        'Help Center',
+        'After-sales',
+        'Partnership',
+        'Recommendations',
+        'Links'
       ]
     }
   },
@@ -103,7 +98,7 @@ export default {
   align-items: center;
   padding: 0 40px;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   height: 60px;
 }
 
@@ -142,17 +137,18 @@ export default {
   align-items: center;
   margin-left: auto;
   gap: 10px;
-  
+
   .username {
-    color: #606266;
+    color: #000000;
     font-size: 14px;
   }
 }
 
 .unified-footer {
-  background: #f5f7fa;
+  background: #252424;
   padding: 40px 10%;
-  color: #606266;
+  color: #252424;
+  height: 310px;
 }
 
 .footer-columns {
@@ -163,19 +159,14 @@ export default {
 }
 
 .footer-col h4 {
-  color: #303133;
+  color: #d0d0d0;
   margin-bottom: 15px;
   font-size: 16px;
 }
 
-.footer-col p {
-  margin: 8px 0;
-  font-size: 14px;
-  cursor: pointer;
-}
 
 .divider {
-  border-top: 1px solid #e4e7ed;
+  border-top: 1px solid #ffffff;
   margin: 20px 0;
 }
 
@@ -183,22 +174,30 @@ export default {
   text-align: center;
   margin: 20px 0;
   font-size: 16px;
-  
+
   span {
     margin: 0 20px;
     color: #409EFF;
+    /*价格亲民*/
   }
+}
+
+.header img {
+  height: 40px;
+  /* 根据实际图片比例调整 */
+  margin-right: 28px;
 }
 
 .footer-links {
   text-align: center;
-  
+
   a {
-    color: #606266;
+    color: #cfcccc;
+    /*关于我们。。。*/
     margin: 0 15px;
     font-size: 14px;
     cursor: pointer;
-    
+
     &:hover {
       color: #409EFF;
     }
